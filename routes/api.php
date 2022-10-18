@@ -49,6 +49,8 @@ Route::post('/zalo-webhook', function(Request $request){
 
     // b8: Khi có token mới thì gọi các api zalo để hoàn thành nhiệm vụ.
 
+    // Để cài đặt, example cài đặt xampp và chạy commandline: php artisan serve
+
     $bodyContent = $request->getContent();
     error_log($bodyContent);
     $data  = json_decode($bodyContent);
@@ -104,12 +106,11 @@ Route::post('/zalo-webhook', function(Request $request){
     // ----------------------- Kết thúc lấy thông tin người quan tâm.
 
 
-
    // Gửi tin nhắn text
    // build data
    $msgBuilder = new MessageBuilder('text');
    $msgBuilder->withUserId($sender);
-   $msgBuilder->withText('Thinklabs JSC, Tin nhắn trả lời từ động từ OA');
+   $msgBuilder->withText('Thinklabs JSC, Tin nhắn trả lời từ động từ OA Test');
 
    $msgText = $msgBuilder->build();
    // send request
