@@ -49,7 +49,9 @@ Route::post('/zalo-webhook', function(Request $request){
 
     // b8: Khi có token mới thì gọi các api zalo để hoàn thành nhiệm vụ.
 
-    // Để cài đặt, example cài đặt xampp và chạy commandline: php artisan serve
+    // Để cài đặt, example cài đặt xampp và chạy commandline:
+    // 1. composer install
+    // 2. php artisan serve
 
     $bodyContent = $request->getContent();
     error_log($bodyContent);
